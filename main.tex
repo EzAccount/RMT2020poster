@@ -18,8 +18,7 @@
 
 \usepackage[mathscr]{euscript}
 \usepackage{amsthm}       
-\usepackage{ragged2e}     
-\justifying                         
+\usepackage{ragged2e}                             
 \usepackage{amssymb}                                    
 \usepackage{amsmath}                                    
 \usepackage{graphicx}                                   
@@ -40,25 +39,14 @@
 
             \begin{block}{Introduction}
 \justifying
-This poster is based on joint work with L. Petrov \cite{PetrovTikhonov2020}.The Gaussian Unitary Ensemble (GUE) is the most 
-well-known random matrix model
-\cite{mehta2004random}, 
-\cite{Forrester-LogGas}, \cite{AndersonGuionnetZeitouniBook}.
+This poster is based on joint work with L. Petrov \cite{PetrovTikhonov2020}.
 We present a new symmetry
 of the distribution of the \emph{perturbed GUE
 ensemble}. By this we mean the random matrix ensemble
 of the form $H=G+\mathrm{diag}(a_1,\ldots,a_N)$, where $G$ is an $N\times N$
 GUE random matrix, to which we add a fixed diagonal matrix. 
-This model is often also called \emph{GUE with external source}.
 
-The unperturbed GUE random matrix, corresponding to $a_i\equiv 0$,
-is unitary invariant
-in the sense that there is 
-equality in distribution
-$G\stackrel{d}{=}UGU^*$ for 
-any fixed $N\times N$ unitary matrix $U$.
-This implies that the distribution of the eigenvalues of 
-$H$ is \emph{symmetric} in the perturbation parameters $a_1,\ldots,a_N $.
+
 Together with the eigenvalues $\lambda^N=(\lambda^N_N\le \ldots\le\lambda^N_1 )$,
 $\lambda^N_i\in \mathbb{R}$,
 of the full matrix $H=[h_{ij}]_{i,j=1}^{N}$, 
@@ -69,26 +57,18 @@ cf. \cite{johansson2006eigenvalues}.
 that is, the interlacing collection of eigenvalues
 of the principal corners
 $[h_{ij}]_{i,j=1}^{k}$ of $H$ for all $k=1,2,\ldots,N $.
-(See \Cref{fig:interlace} for an illustration.)
 The distribution of the corners process of $H$ is 
 \emph{not symmetric} in the parameters $a_i$.
-Moreover, assuming that the $a_i$'s are 
-all distinct, there are $N!$ \emph{different probability
-distributions} on 
-interlacing collections of eigenvalues
-at $N$ levels. 
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=.55\textwidth]{fig_interlace}
+	\includegraphics[width=.55\textwidth]{fig_interlace.pdf}
 	\caption{Interlacing array of eigenvalues
 	of all principal corners of a $4\times 4$ matrix.}
 	\label{fig:interlace}
 \end{figure}
 
-We present explicit couplings 
-between these $N!$ distributions, 
-by showing that each nearest neighbour transposition
+We show that each nearest neighbour transposition
 $a_k\leftrightarrow a_{k+1}$, $k=1,\ldots,N-1 $, of the parameters
 is equivalent in distribution to a 
 rather simple \emph{Markov swap operator}
@@ -116,9 +96,11 @@ to the left:
 where $\mathscr{E}_{a_k-a_{k+1}}^{i}$'s are independent exponential random variables
 with parameter $a_k-a_{k+1}$ (and mean $1 / (a_k-a_{k+1})$).
             \end{block}
-        \end{column}
-    
-        \begin{column}{.26\linewidth}
+            \begin{figure}[htpb]
+                \centering
+                \includegraphics[width=.9\textwidth]{eigenvalues_jump.pdf}
+                \label{fig:jump}
+            \end{figure}
 \begin{theorem}
     \label{thm:main_swap}
     Assume that $a_k\ne a_{k+1}$. Then the action of the Markov operator
@@ -126,15 +108,19 @@ with parameter $a_k-a_{k+1}$ (and mean $1 / (a_k-a_{k+1})$).
     turns the corners distribution of $G+\mathrm{diag}(a_1,\ldots,a_k,a_{k+1},\ldots,a_N )$
     into the one of $G+\mathrm{diag}(a_1,\ldots,a_{k+1},a_{k},\ldots,a_N )$,
     where $G$ is the $N\times N$ GUE random matrix.
-\end{theorem}
-\begin{theorem}
-    \label{thm:main_theorem_shift}
-    The action of a sequence of left exponential jumps 
-    (where the parameter at level $k$ is taken to be $k\alpha$), from level $1$
-    up to infinity, is equivalent in distribution 
-    to shifting all the 
-    elements of the interlacing array by $\alpha$ to the left.
-\end{theorem}
+\end{theorem} 
+
+\end{column}
+\begin{column}{.26\linewidth}
+    \begin{theorem}
+        \label{thm:main_theorem_shift}
+        The action of a sequence of left exponential jumps 
+        (where the parameter at level $k$ is taken to be $k\alpha$), from level $1$
+        up to infinity, is equivalent in distribution 
+        to shifting all the 
+        elements of the interlacing array by $\alpha$ to the left.
+    \end{theorem}  
+
 \begin{block}{Brownian Motions}
 \justifying
     
@@ -163,6 +149,11 @@ $B^k_j$, $1\le j\le k<\infty$, such that:
 		an interlacing array as in \Cref{fig:interlace}.
 \end{itemize}
 \end{block}
+\begin{figure}[bm]
+	\centering
+	\includegraphics[width=.9\textwidth]{reflected_bm.png}
+	\label{fig:bm}
+\end{figure}
 \begin{proposition}
 	\label{prop:connection_to_reflected_BM}
 	At each fixed time moment $t\in \mathbb{R}_{\ge0}$, we have equality

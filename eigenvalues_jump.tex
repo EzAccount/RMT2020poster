@@ -1,0 +1,83 @@
+\documentclass{standalone}
+\usepackage{tikz,amssymb}
+\usepackage{amsthm}       
+\usepackage[mathscr]{euscript}                        
+\usepackage{amssymb}                                    
+\usepackage{amsmath}  
+\usetikzlibrary{
+	patterns,
+	shapes,
+	arrows,
+	positioning,
+	decorations.markings,
+	decorations.pathmorphing,
+	circuits.logic.US,
+	circuits.logic.IEC,
+	fit,
+	calc,
+	plotmarks,
+	matrix
+}
+
+\tikzset{
+%Define standard arrow tip
+>=stealth',
+%Define style for different line styles
+help lines/.style={dashed, thick},
+axis/.style={<->},
+important line/.style={thick},
+connection/.style={thick, dotted},
+punkt/.style={
+rectangle,
+rounded corners,
+draw=black, thick,
+text width=4.5em,
+minimum height=2em,
+text centered,
+},
+pil/.style={
+->,
+very thick,
+shorten >=2pt},
+pilr/.style={
+<-,
+very thick,
+shorten <=2pt}
+}
+
+\begin{document}
+
+\begin{tikzpicture}
+[scale=1, thick]
+\def\ve{.5}
+
+\node at (0,0) {$\lambda^3_3$};
+\node(from) at (4,0) {$\lambda^3_2$};
+\node at (8,0) {$\lambda^3_1$};
+\node(to) at (2.5,0) {\color{red} ${\nu}^3_2$};
+\node at (2,-\ve) {$\lambda^2_2$};
+\node at (6,-\ve) {$\lambda^2_1$};
+\node at (4,-2*\ve) {$\lambda^1_1$};
+
+
+
+\draw [->] (from) edge [bend right] node[above] {$\mathscr{S}$} (to);
+
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
